@@ -119,7 +119,7 @@ class ElevenLabsTTSTool(BaseTool):
             url = "https://api.elevenlabs.io/v1/text-to-speech/txBahrIQnLBRd00RGCN5/stream"
             querystring = {"optimize_streaming_latency":"1"}
             headers = {
-                "xi-api-key": "5c924f93c3f3a228a6da75ab00f73bc2",
+                "xi-api-key": "yourapiKey",
                 "Content-Type": "application/json"
             }
             payload = {
