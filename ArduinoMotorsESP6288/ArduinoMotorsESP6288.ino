@@ -5,8 +5,8 @@
 #define SERIAL_BAUD 115200
 
 // Replace with your network credentials
-const char* ssid = "TelstraE8752E";
-const char* password = "j5cph5asws7wcfkm";
+const char* ssid = "your router";
+const char* password = "wifi password";
 
 // Create an instance of the web server
 // Specify the port to listen on
