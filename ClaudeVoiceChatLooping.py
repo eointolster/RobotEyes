@@ -10,7 +10,7 @@ import pygame
 import pprint
 
 # Initialize the Anthropics API client with your API key
-claude_api_key = "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"  # Replace with your actual API key for Anthropic
+claude_api_key = "yourapiKey"  # Replace with your actual API key for Anthropic
 client = anthropic.Anthropic(api_key=claude_api_key)
 
 frames = []  # Define frames as a list to hold audio data chunks
@@ -76,7 +76,7 @@ def convert_text_to_speech(text):
     url = "https://api.elevenlabs.io/v1/text-to-speech/txBahrIQnLBRd00RGCN5/stream"
     querystring = {"optimize_streaming_latency":"1"}
     headers = {
-        "xi-api-key": "5c924f93c3f3a228a6da75ab00f73bc2",
+        "xi-api-key": "yourapiKey",
         "Content-Type": "application/json"
     }
     payload = {
