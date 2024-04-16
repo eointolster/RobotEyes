@@ -10,7 +10,7 @@ import pygame
 import pprint
 
 # Initialize the Anthropics API client with your API key
-api_key = "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"  # Replace with your actual API key for Anthropic
+api_key = "yourapiKey"  # Replace with your actual API key for Anthropic
 client = anthropic.Anthropic(api_key=api_key)
 
 frames = []  # Define frames as a list to hold audio data chunks
@@ -59,7 +59,7 @@ def convert_text_to_speech(text):
     url = "https://api.elevenlabs.io/v1/text-to-speech/txBahrIQnLBRd00RGCN5/stream"
     querystring = {"optimize_streaming_latency":"1"}
     headers = {
-        "xi-api-key": "5c924f93c3f3a228a6da75ab00f73bc2",
+        "xi-api-key": "yourapiKey",
         "Content-Type": "application/json"
     }
     payload = {
@@ -122,70 +122,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-# import whisper
-# import sounddevice as sd
-# import numpy as np
-# import scipy.signal
-# import keyboard
-# import anthropic
-
-# # Initialize the Anthropics API client with your API key
-# api_key = "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"  # Replace with your actual API key
-# client = anthropic.Anthropic(api_key=api_key)
-
-# frames = []  # Define frames as a list to hold audio data chunks
-
-# def record_audio_with_spacebar(sample_rate=44100, channels=1):
-#     global frames
-#     frames.clear()  # Clear any previous recordings
-
-#     def callback(indata, frame_count, time_info, status):
-#         frames.append(indata.copy())  # Append the current frame of audio data to the frames list
-
-#     with sd.InputStream(samplerate=sample_rate, channels=channels, callback=callback):
-#         print("Press and hold the spacebar to start recording...")
-#         keyboard.wait('space')  # Wait until space bar is pressed to start recording
-#         print("Recording... Release the spacebar to stop.")
-#         while keyboard.is_pressed('space'):
-#             pass  # Keep recording while spacebar is pressed
-#         print("Recording stopped.")
-
-#     return np.concatenate(frames, axis=0)  # Return a single array concatenated from the list of frames
-
-# def transcribe_with_whisper(audio):
-#     audio = audio.flatten()
-#     audio = audio.astype(np.float32)  # Convert to float32 as required by Whisper
-#     model = whisper.load_model("base")
-#     result = model.transcribe(audio)
-#     return result['text']
-
-# def send_to_claude_api(text):
-#     response = client.messages.create(
-#         model="claude-3-opus-20240229",  # Example model, adjust as needed
-#         max_tokens=1000,
-#         temperature=0,
-#         system="Your system prompt here.",  # System context
-#         messages=[
-#             {
-#                 "role": "user",
-#                 "content": [{"type": "text", "text": text}]
-#             }
-#         ]
-#     )
-#     return response.content  # Adjust according to the actual structure of `response`
-
-# def main():
-#     sd.default.device = 2  # Set the desired input device here
-#     sample_rate = 44100  # Default sample rate for recording
-#     audio = record_audio_with_spacebar(sample_rate=sample_rate)
-#     if audio.size > 0:  # Check if audio contains data
-#         if sample_rate != 16000:
-#             audio = scipy.signal.resample_poly(audio, 16000, sample_rate)
-#         transcribed_text = transcribe_with_whisper(audio)
-#         print(f"Transcribed Text: {transcribed_text}")
-#         claude_response = send_to_claude_api(transcribed_text)
-#         print(f"Claude's Response: {claude_response}")
-
-# if __name__ == "__main__":
-#     main()
