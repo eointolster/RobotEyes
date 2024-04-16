@@ -1,3 +1,21 @@
+You will need an arduino with an integrated ESP or have two modules. Get them sorted out first, use my code as an example
+I created a webpage to control the robot first. 
+![image](https://github.com/eointolster/RobotEyes/assets/64816111/c42909ea-6864-4c50-9e8a-d75bb526b7ae)
+
+After that, update the Claude function tools inside of the robotClaudeVision.py file with you robot control commands. Should be clear if you get step one done.
+
+you may have to go to one of my previous videos to get moondream setup, but it is easy. Try set it up yourself first and copy across the moondream folder to the anthropic tools folder below.
+I suggest taking the online up to date example from Anthropic first and then just copy in my code. It will probably be awhile before anyone starts looking at this project and I will be off with another project. 
+
+Ok whats next. You got motors working, you got webpage accessible, remember your ipaddress in the robotClaudeVision.py
+THIS IS BIG FOR YOU, CHANGE YOUR MODEL IN ANTHROPIC TOOLS TO HAIKU, it is so much cheaper than SONNET. Literally costs me less than a cent for a command or search.
+
+THERE WILL BE MISSING INSTALLS FOR requirements.txt SORRY I WAS NOT FULLY PAYING ATTENTION WHEN MAKING THIS PROJECT. IT WAS JUST A SPURR OF THE MOMENT THING, SORRY.
+
+##################################################################################################################################################
+PREVIOUS README FOR ANTHROPIC TOOLS WHICH ARE AMAZING
+##################################################################################################################################################
+
 I borrowed this from Anthropic and added in app.py which is my code for you to use.
 Just type python app.py  followed by your request as described in my video called "Claude 3 Functions with code" on youtube.com under Eoin Tolster
 
